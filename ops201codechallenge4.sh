@@ -8,9 +8,10 @@
 #Kills the process with that PID
 #Starts over at step 1 and continues until the user exits with ctrl c                    
 
-while [ condition ]
+playvar=1
+while [ $playvar -le 10 ]
 do
-   ps -aux
-   command2
-   command3
+    echo $playvar
+    playvar=$(( $playvar +1))
+    sleep 0.5
 done
