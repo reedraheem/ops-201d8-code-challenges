@@ -11,11 +11,12 @@
 
 #Reference: Got a couple of examples from Chat gpt and https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/?view=powershell-5.1
 
-Get-EventLog -LogName System -EntryType Error $Begin -Before $End '5/4/2023'
+Get-EventLog System -After (Get-Date).AddDays(-1) | Out-File "$home\Desktop\last_24.txt"
 Get-EventLog -LogName System -EntryType Error | Out-File "$($env:userprofile)\Desktop\errors.txt"
 Get-EventLog -LogName System -InstanceId 16
 Get-EventLog -LogName System -Newest 20
-Get-EventLog -LogName System -Newest 500 | Select-Object -Property Source
+Get-EventLog System -Newest 500 | Format-Table -AutoSize -Property Source, Message -Wrap
+
 
 
 
