@@ -23,9 +23,10 @@ for ($i = 1; $i -le 10; $i++) {
 }
 
 #Close all instances of the Notepad.
-Get-Process | Where-Object { $_.notepad -eq "notepad" } | Stop-Process
+Get-Process | Where-Object { $_.name -eq "notepad" } | Stop-Process
 
 #Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, such as Google Chrome or MS Edge.
-Stop-Process -Id <4200>
+Stop-Process -Id <4200> -Force
+
 
 
