@@ -6,26 +6,16 @@
 # Purpose:                     Purpose
 
 #Run whois against a user input string.
-echo "www.google.com:"
-read domain
-
-whois $domain
-
+whois $domain >> test.txt
 
 
 #Run dig against the user input string.
-echo "www.google.com:"
-read domain
-
-dig $domain
+dig $domain >> test.txt
 
 
 
 #Run host against the user input string.
-echo "www.google.com:"
-read domain
-
-host $domain
+host $domain >> test.txt
 
 
 
@@ -33,10 +23,5 @@ host $domain
 nslookup_domain() {
     nslookup $1
 }
-
-echo "www.google.com:"
-read domain
-
-nslookup_domain $domain
-
-Done 
+nslookup_domain $domain >> test.txt
+ 
