@@ -24,4 +24,6 @@ nslookup_domain() {
     nslookup $1
 }
 nslookup_domain $domain >> test.txt
- 
+
+
+ #end
